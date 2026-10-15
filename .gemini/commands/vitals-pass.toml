@@ -1,0 +1,13 @@
+description = "Find and fix the biggest Core Web Vitals problems on a page, measuring before and after."
+prompt = '''
+# vitals-pass
+
+When invoked, find and fix the biggest Core Web Vitals problems on the page the user names, measuring before and after.
+
+1. Identify the page and how it is built and served. Ask for field data (for example Search Console or CrUX numbers) if the user has it.
+2. Capture a baseline with the project's own tooling or Lighthouse in DevTools: LCP, INP (or TBT as a lab proxy) and CLS. Record the numbers and the conditions.
+3. Identify the LCP element and what delays it (server response, render-blocking CSS/JS, image size, late discovery). Identify layout shifts (missing dimensions, late-loading fonts or embeds). Identify long tasks and heavy handlers behind slow interactions.
+4. Fix the single largest problem first, in the smallest change that works. Do not add dependencies without asking.
+5. Re-measure after each fix and keep a short table of before and after numbers. Revert changes that did not help.
+6. Stop when targets are met (LCP 2.5 s, INP 200 ms, CLS 0.1) or returns diminish. Report what remains and why.
+'''
